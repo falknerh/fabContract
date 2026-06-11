@@ -129,7 +129,7 @@ export function Header({ onMenuToggle, mobileOpen }: HeaderProps) {
         <div className="hidden md:block w-px h-5 bg-slate-200 mx-3 shrink-0" />
 
         {/* ─ Desktop nav tabs ─ */}
-        <nav className="hidden md:flex items-center gap-0.5 flex-1 min-w-0 overflow-x-auto no-scrollbar">
+        <nav className="hidden md:flex items-center gap-0.5 flex-1">
           {NAV_ITEMS.map(item => {
             const active = isActive(item);
             const open   = openNav === item.id;
@@ -158,7 +158,7 @@ export function Header({ onMenuToggle, mobileOpen }: HeaderProps) {
                 {open && (
                   <>
                     <div className="fixed inset-0 z-30" onClick={() => setOpenNav(null)} />
-                    <div className="absolute top-full left-0 mt-1.5 w-52 bg-white rounded-xl shadow-modal border border-slate-200 py-1.5 z-40 animate-slide-in">
+                    <div className="absolute top-full left-0 mt-1.5 w-52 bg-white rounded-xl shadow-lg border border-slate-200 py-1.5 z-40">
                       {item.children?.map(child => {
                         const childPath = child.href.split("?")[0];
                         const childActive = pathname === childPath || pathname.startsWith(childPath + "/");
@@ -231,7 +231,7 @@ export function Header({ onMenuToggle, mobileOpen }: HeaderProps) {
       {mobileOpen && (
         <div className="fixed inset-0 z-50 md:hidden" style={{ top: 56 }}>
           <div className="absolute inset-0 bg-black/40" onClick={onMenuToggle} />
-          <div className="absolute left-0 top-0 bottom-0 w-72 bg-white shadow-modal flex flex-col overflow-y-auto animate-slide-in">
+          <div className="absolute left-0 top-0 bottom-0 w-72 bg-white shadow-lg flex flex-col overflow-y-auto animate-slide-in">
             <div className="px-4 py-3 border-b border-slate-100 flex items-center gap-2">
               <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-xs text-white">A</div>
               <span className="font-semibold text-sm text-slate-900">AUFTRÄGE</span>
