@@ -5,9 +5,57 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Bell, Search, ChevronDown, Menu, X,
-  LayoutDashboard, FileText, Truck, ArrowLeftRight, BarChart2, Settings
+  LayoutDashboard, FileText, Truck, ArrowLeftRight, BarChart2, Settings,
+  AlertTriangle, CheckCircle2, Info, Clock
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+// ─── Mock notifications ───────────────────────────────────────────────────
+
+const NOTIFICATIONS = [
+  {
+    id: "n1",
+    type: "warning" as const,
+    title: "Lieferfrist läuft ab",
+    body: "EK-2024-0031 · Abruf DSP-2024-0122 fällig am 15.10.2024",
+    time: "vor 12 Min.",
+    read: false,
+    href: "/kontrakte/ktr_001",
+  },
+  {
+    id: "n2",
+    type: "success" as const,
+    title: "Wareneingang bestätigt",
+    body: "500 t Winterweizen · EK-2024-0031 gebucht",
+    time: "vor 1 Std.",
+    read: false,
+    href: "/disposition",
+  },
+  {
+    id: "n3",
+    type: "info" as const,
+    title: "Neuer Kontrakt freigegeben",
+    body: "EK-2024-0067 · FrischePack GmbH wurde genehmigt",
+    time: "vor 3 Std.",
+    read: true,
+    href: "/kontrakte/ktr_004",
+  },
+  {
+    id: "n4",
+    type: "warning" as const,
+    title: "Preisabweichung erkannt",
+    body: "VK-2024-0018 · Marktpreis +4,2 % über Kontraktpreis",
+    time: "gestern",
+    read: true,
+    href: "/analyse",
+  },
+];
+
+const NOTIF_ICONS = {
+  warning: { icon: AlertTriangle, color: "text-amber-500 bg-amber-50" },
+  success: { icon: CheckCircle2, color: "text-emerald-500 bg-emerald-50" },
+  info:    { icon: Info,         color: "text-blue-500 bg-blue-50" },
+};
 
 // ─── Navigation items ─────────────────────────────────────────────────────
 
@@ -92,9 +140,15 @@ interface HeaderProps {
 
 export function Header({ onMenuToggle, mobileOpen }: HeaderProps) {
   const pathname   = usePathname();
-  const [openNav,  setOpenNav]  = useState<string | null>(null);
+  const [openNav,    setOpenNav]    = useState<string | null>(null);
+  const [notifOpen,  setNotifOpen]  = useState(false);
+  const [notifs,     setNotifs]     = useState(NOTIFICATIONS);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+
+  const unreadCount = notifs.filter(n => !n.read).length;
+
+  const markAllRead = () => setNotifs(prev => prev.map(n => ({ ...n, read: true })));
 
   const isActive = (item: typeof NAV_ITEMS[0]) =>
     pathname === item.href ||
@@ -215,10 +269,75 @@ export function Header({ onMenuToggle, mobileOpen }: HeaderProps) {
           )}
 
           {/* Bell */}
-          <button className="relative p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500">
-            <Bell style={{ width: 18, height: 18 }} />
-            <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-red-500 rounded-full" />
-          </button>
+          <div className="relative">
+            <button
+              onClick={() => { setNotifOpen(o => !o); setOpenNav(null); }}
+              className="relative p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-500"
+            >
+              <Bell style={{ width: 18, height: 18 }} />
+              {unreadCount > 0 && (
+                <span className="absolute top-1 right-1 w-4 h-4 bg-red-500 rounded-full text-white text-[9px] font-bold flex items-center justify-center">
+                  {unreadCount}
+                </span>
+              )}
+            </button>
+
+            {notifOpen && (
+              <>
+                <div className="fixed inset-0 z-30" onClick={() => setNotifOpen(false)} />
+                <div className="absolute right-0 top-full mt-1.5 w-80 bg-white rounded-xl shadow-lg border border-slate-200 z-40 overflow-hidden">
+                  {/* Header */}
+                  <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100">
+                    <span className="text-sm font-semibold text-slate-800">Benachrichtigungen</span>
+                    {unreadCount > 0 && (
+                      <button onClick={markAllRead} className="text-xs text-blue-600 hover:text-blue-700">
+                        Alle gelesen
+                      </button>
+                    )}
+                  </div>
+                  {/* List */}
+                  <div className="divide-y divide-slate-50 max-h-80 overflow-y-auto">
+                    {notifs.map(n => {
+                      const { icon: Icon, color } = NOTIF_ICONS[n.type];
+                      return (
+                        <Link
+                          key={n.id}
+                          href={n.href}
+                          onClick={() => { setNotifOpen(false); setNotifs(prev => prev.map(x => x.id === n.id ? { ...x, read: true } : x)); }}
+                          className={cn(
+                            "flex gap-3 px-4 py-3 hover:bg-slate-50 transition-colors",
+                            !n.read && "bg-blue-50/40"
+                          )}
+                        >
+                          <div className={cn("w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5", color)}>
+                            <Icon className="w-4 h-4" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start justify-between gap-2">
+                              <p className={cn("text-sm leading-snug", !n.read ? "font-semibold text-slate-900" : "font-medium text-slate-700")}>
+                                {n.title}
+                              </p>
+                              {!n.read && <span className="w-2 h-2 bg-blue-500 rounded-full shrink-0 mt-1.5" />}
+                            </div>
+                            <p className="text-xs text-slate-500 mt-0.5 truncate">{n.body}</p>
+                            <p className="text-[11px] text-slate-400 mt-1 flex items-center gap-1">
+                              <Clock className="w-3 h-3" />{n.time}
+                            </p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                  {/* Footer */}
+                  <div className="px-4 py-2.5 border-t border-slate-100 text-center">
+                    <Link href="/disposition" onClick={() => setNotifOpen(false)} className="text-xs text-blue-600 hover:text-blue-700">
+                      Alle Benachrichtigungen anzeigen
+                    </Link>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
 
           {/* ───────────────────────────────────────────────────────────
               User profile / mandant selector is provided by fabular.
