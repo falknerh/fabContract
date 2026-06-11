@@ -1,0 +1,127 @@
+[
+  {
+    "id": "prtn_001",
+    "nummer": "L-0001",
+    "name": "Agrar Invest Österreich GmbH",
+    "name2": "Getreidehandel & Agrarprodukte",
+    "land": "AT",
+    "ustId": "ATU23456789",
+    "waehrung": "EUR",
+    "zahlungsziel": 30,
+    "zahlungsbedingung": "30 Tage netto",
+    "lieferbedingung": "DAP",
+    "typ": "LIEFERANT",
+    "filialen": [
+      { "id": "fil_001a", "partnerId": "prtn_001", "bezeichnung": "Lager Wien", "adresse": "Simmering Hauptstr. 24", "plz": "1110", "ort": "Wien", "land": "AT", "kontakt": "+43 1 234 5678" },
+      { "id": "fil_001b", "partnerId": "prtn_001", "bezeichnung": "Lager Linz", "adresse": "Hafenstr. 12", "plz": "4020", "ort": "Linz", "land": "AT", "kontakt": "+43 732 123 456" }
+    ]
+  },
+  {
+    "id": "prtn_002",
+    "nummer": "L-0002",
+    "name": "Agro Invest Romania S.R.L.",
+    "name2": "Mais & Sonnenblume",
+    "land": "RO",
+    "ustId": "RO12345678",
+    "waehrung": "USD",
+    "zahlungsziel": 60,
+    "zahlungsbedingung": "60 Tage netto",
+    "lieferbedingung": "FOB",
+    "typ": "LIEFERANT",
+    "filialen": [
+      { "id": "fil_002a", "partnerId": "prtn_002", "bezeichnung": "Silo Constanta", "adresse": "Port of Constanta, Silo 7", "plz": "900900", "ort": "Constanta", "land": "RO", "kontakt": "+40 241 123 456" }
+    ]
+  },
+  {
+    "id": "prtn_003",
+    "nummer": "L-0003",
+    "name": "Magyar Gabona Kft.",
+    "name2": "Ungarischer Getreidehandel",
+    "land": "HU",
+    "ustId": "HU12345678",
+    "waehrung": "EUR",
+    "zahlungsziel": 45,
+    "zahlungsbedingung": "45 Tage netto",
+    "lieferbedingung": "EXW",
+    "typ": "LIEFERANT",
+    "filialen": [
+      { "id": "fil_003a", "partnerId": "prtn_003", "bezeichnung": "Silo Györ", "adresse": "Ipari Park 15", "plz": "9025", "ort": "Györ", "land": "HU" }
+    ]
+  },
+  {
+    "id": "prtn_004",
+    "nummer": "K-0001",
+    "name": "Bäckerei Gruppe Schmidt GmbH",
+    "name2": "Industriebäckerei",
+    "land": "DE",
+    "ustId": "DE123456789",
+    "waehrung": "EUR",
+    "zahlungsziel": 14,
+    "zahlungsbedingung": "14 Tage 2% Skonto",
+    "lieferbedingung": "DDP",
+    "typ": "KUNDE",
+    "filialen": [
+      { "id": "fil_004a", "partnerId": "prtn_004", "bezeichnung": "Werk München", "adresse": "Münchner Str. 80", "plz": "80335", "ort": "München", "land": "DE", "kontakt": "+49 89 234 5678" },
+      { "id": "fil_004b", "partnerId": "prtn_004", "bezeichnung": "Werk Hamburg", "adresse": "Hafencity 24", "plz": "20457", "ort": "Hamburg", "land": "DE" }
+    ]
+  },
+  {
+    "id": "prtn_005",
+    "nummer": "K-0002",
+    "name": "AlpenMühle Vorarlberg AG",
+    "land": "AT",
+    "ustId": "ATU34567890",
+    "waehrung": "EUR",
+    "zahlungsziel": 30,
+    "zahlungsbedingung": "30 Tage netto",
+    "lieferbedingung": "DAP",
+    "typ": "KUNDE",
+    "filialen": [
+      { "id": "fil_005a", "partnerId": "prtn_005", "bezeichnung": "Mühle Bregenz", "adresse": "Mühlweg 1", "plz": "6900", "ort": "Bregenz", "land": "AT" }
+    ]
+  },
+  {
+    "id": "prtn_006",
+    "nummer": "K-0003",
+    "name": "REWE International AG",
+    "name2": "BILLA / MERKUR",
+    "land": "AT",
+    "ustId": "ATU45678901",
+    "waehrung": "EUR",
+    "zahlungsziel": 30,
+    "zahlungsbedingung": "30 Tage netto",
+    "lieferbedingung": "DAP",
+    "typ": "KUNDE",
+    "filialen": [
+      { "id": "fil_006a", "partnerId": "prtn_006", "bezeichnung": "Zentrallager Wiener Neudorf", "adresse": "IZ NÖ-Süd, Str.3", "plz": "2355", "ort": "Wiener Neudorf", "land": "AT" },
+      { "id": "fil_006b", "partnerId": "prtn_006", "bezeichnung": "Zentrallager Linz", "adresse": "Industriestr. 77", "plz": "4030", "ort": "Linz", "land": "AT" }
+    ]
+  },
+  {
+    "id": "prtn_007",
+    "nummer": "L-0010",
+    "name": "FrischePack GmbH",
+    "name2": "Obst, Gemüse & Salate",
+    "land": "AT",
+    "ustId": "ATU56789012",
+    "waehrung": "EUR",
+    "zahlungsziel": 7,
+    "zahlungsbedingung": "7 Tage netto",
+    "lieferbedingung": "DAP",
+    "typ": "LIEFERANT",
+    "filialen": []
+  },
+  {
+    "id": "prtn_008",
+    "nummer": "L-0011",
+    "name": "Tiefkühllogistik Nord GmbH",
+    "land": "DE",
+    "ustId": "DE987654321",
+    "waehrung": "EUR",
+    "zahlungsziel": 30,
+    "zahlungsbedingung": "30 Tage netto",
+    "lieferbedingung": "DAP",
+    "typ": "LIEFERANT",
+    "filialen": []
+  }
+]

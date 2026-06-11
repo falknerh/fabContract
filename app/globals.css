@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --fab-nav:        #0C1A2E;
+  --fab-nav-hover:  #162840;
+  --fab-nav-active: #1E3A5F;
+  --fab-brand:      #2563EB;
+  --fab-bg:         #F1F5F9;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #F1F5F9;
+  color: #0F172A;
+  min-height: 100vh;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar         { width: 6px; height: 6px; }
+::-webkit-scrollbar-track   { background: transparent; }
+::-webkit-scrollbar-thumb   { background: #CBD5E1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+}
+
+/* ── Table row hover ── */
+.fab-table tr:hover td {
+  background-color: #F8FAFC;
+}
+
+/* ── Position quick-entry ── */
+.pos-cell-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #0F172A;
+}
+.pos-cell-input:focus {
+  background: #EFF6FF;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+/* ── Animated number ── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-count { animation: countUp 0.4s ease-out; }
+
+/* ── Recharts tooltip ── */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  border-radius: 8px !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.1) !important;
+  font-size: 0.8125rem !important;
+}
+
+/* ── Print ── */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}

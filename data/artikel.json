@@ -1,0 +1,120 @@
+[
+  {
+    "id": "art_001",
+    "nummer": "GET-001",
+    "bezeichnung": "Winterweizen",
+    "bezeichnung2": "Qualität A+, Ernte 2024",
+    "artikelgruppe": "Getreide",
+    "einheit": "t",
+    "warengruppe": "Getreide & Ölsaaten",
+    "steuercode": "UST10",
+    "mindestmenge": 25,
+    "verpackungseinheit": 25,
+    "qualitaetsmerkmale": [
+      { "key": "feuchte",      "bezeichnung": "Feuchtigkeit",    "typ": "PROZENT", "einheit": "%",    "standardwert": 14.0 },
+      { "key": "protein",      "bezeichnung": "Proteingehalt",   "typ": "PROZENT", "einheit": "%",    "standardwert": 13.0 },
+      { "key": "hektoliter",   "bezeichnung": "Hektolitergewicht","typ": "ZAHL",   "einheit": "kg/hl","standardwert": 76 },
+      { "key": "fallzahl",     "bezeichnung": "Fallzahl",        "typ": "ZAHL",   "einheit": "sec",  "standardwert": 220 },
+      { "key": "herkunft",     "bezeichnung": "Herkunft",        "typ": "TEXT",                        "standardwert": "Österreich" }
+    ],
+    "bildUrl": null
+  },
+  {
+    "id": "art_002",
+    "nummer": "GET-002",
+    "bezeichnung": "Winterweizen Qualität B",
+    "bezeichnung2": "Futterweizen, Ernte 2024",
+    "artikelgruppe": "Getreide",
+    "einheit": "t",
+    "warengruppe": "Getreide & Ölsaaten",
+    "steuercode": "UST10",
+    "mindestmenge": 25,
+    "qualitaetsmerkmale": [
+      { "key": "feuchte",      "bezeichnung": "Feuchtigkeit",    "typ": "PROZENT", "einheit": "%",    "standardwert": 14.5 },
+      { "key": "protein",      "bezeichnung": "Proteingehalt",   "typ": "PROZENT", "einheit": "%",    "standardwert": 11.0 },
+      { "key": "hektoliter",   "bezeichnung": "Hektolitergewicht","typ": "ZAHL",   "einheit": "kg/hl","standardwert": 72 }
+    ]
+  },
+  {
+    "id": "art_003",
+    "nummer": "GET-003",
+    "bezeichnung": "Körnermais",
+    "bezeichnung2": "EU-Herkunft, Ernte 2024",
+    "artikelgruppe": "Getreide",
+    "einheit": "t",
+    "warengruppe": "Getreide & Ölsaaten",
+    "steuercode": "UST10",
+    "mindestmenge": 25,
+    "qualitaetsmerkmale": [
+      { "key": "feuchte",      "bezeichnung": "Feuchtigkeit",    "typ": "PROZENT", "einheit": "%",    "standardwert": 14.0 },
+      { "key": "aflatoxin",    "bezeichnung": "Aflatoxin B1",    "typ": "ZAHL",   "einheit": "ppb",  "standardwert": 2 },
+      { "key": "herkunft",     "bezeichnung": "Herkunft",        "typ": "TEXT",                        "standardwert": "Ungarn" }
+    ]
+  },
+  {
+    "id": "art_004",
+    "nummer": "GET-004",
+    "bezeichnung": "Winterraps",
+    "bezeichnung2": "00-Qualität, GMO-frei",
+    "artikelgruppe": "Ölsaaten",
+    "einheit": "t",
+    "warengruppe": "Getreide & Ölsaaten",
+    "steuercode": "UST20",
+    "mindestmenge": 25,
+    "qualitaetsmerkmale": [
+      { "key": "feuchte",      "bezeichnung": "Feuchtigkeit",    "typ": "PROZENT", "einheit": "%",    "standardwert": 9.0 },
+      { "key": "oel",          "bezeichnung": "Ölgehalt",        "typ": "PROZENT", "einheit": "%",    "standardwert": 42.0 },
+      { "key": "gmo",          "bezeichnung": "GMO-frei",        "typ": "BOOLEAN",                    "standardwert": true }
+    ]
+  },
+  {
+    "id": "art_005",
+    "nummer": "GET-005",
+    "bezeichnung": "Gerste",
+    "bezeichnung2": "Braugerste Qualität",
+    "artikelgruppe": "Getreide",
+    "einheit": "t",
+    "warengruppe": "Getreide & Ölsaaten",
+    "steuercode": "UST10",
+    "mindestmenge": 25,
+    "qualitaetsmerkmale": [
+      { "key": "feuchte",      "bezeichnung": "Feuchtigkeit",    "typ": "PROZENT", "einheit": "%",    "standardwert": 13.5 },
+      { "key": "protein",      "bezeichnung": "Proteingehalt",   "typ": "PROZENT", "einheit": "%",    "standardwert": 11.5 },
+      { "key": "keimfaehig",   "bezeichnung": "Keimfähigkeit",   "typ": "PROZENT", "einheit": "%",    "standardwert": 97.0 }
+    ]
+  },
+  { "id": "art_010", "nummer": "LEH-001", "bezeichnung": "Bio Äpfel Gala", "bezeichnung2": "Klasse I, kg", "artikelgruppe": "Obst", "einheit": "kg", "warengruppe": "Obst & Gemüse", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_011", "nummer": "LEH-002", "bezeichnung": "Bananen Cavendish", "bezeichnung2": "Klasse I, kg", "artikelgruppe": "Obst", "einheit": "kg", "warengruppe": "Obst & Gemüse", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_012", "nummer": "LEH-003", "bezeichnung": "Tomaten Rispentomaten", "bezeichnung2": "Klasse I, kg", "artikelgruppe": "Gemüse", "einheit": "kg", "warengruppe": "Obst & Gemüse", "steuercode": "UST10", "mindestmenge": 5 },
+  { "id": "art_013", "nummer": "LEH-004", "bezeichnung": "Paprika rot", "bezeichnung2": "Klasse I, kg", "artikelgruppe": "Gemüse", "einheit": "kg", "warengruppe": "Obst & Gemüse", "steuercode": "UST10", "mindestmenge": 5 },
+  { "id": "art_014", "nummer": "LEH-005", "bezeichnung": "Salat Eisberg", "bezeichnung2": "Stück", "artikelgruppe": "Gemüse", "einheit": "St", "warengruppe": "Obst & Gemüse", "steuercode": "UST10", "mindestmenge": 12 },
+  { "id": "art_015", "nummer": "LEH-006", "bezeichnung": "Gurken Salatgurken", "bezeichnung2": "Stück", "artikelgruppe": "Gemüse", "einheit": "St", "warengruppe": "Obst & Gemüse", "steuercode": "UST10", "mindestmenge": 12 },
+  { "id": "art_016", "nummer": "LEH-007", "bezeichnung": "Karotten gewaschen", "bezeichnung2": "1 kg Beutel", "artikelgruppe": "Gemüse", "einheit": "Btl", "warengruppe": "Obst & Gemüse", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_017", "nummer": "LEH-008", "bezeichnung": "Zwiebeln gelb", "bezeichnung2": "2 kg Netz", "artikelgruppe": "Gemüse", "einheit": "Netz", "warengruppe": "Obst & Gemüse", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_020", "nummer": "LEH-010", "bezeichnung": "Frischmilch 3,5%", "bezeichnung2": "1 l Flasche", "artikelgruppe": "Molkerei", "einheit": "St", "warengruppe": "Molkerei & Eier", "steuercode": "UST10", "mindestmenge": 24 },
+  { "id": "art_021", "nummer": "LEH-011", "bezeichnung": "H-Milch 3,5%", "bezeichnung2": "1 l Tetrapack", "artikelgruppe": "Molkerei", "einheit": "St", "warengruppe": "Molkerei & Eier", "steuercode": "UST10", "mindestmenge": 12 },
+  { "id": "art_022", "nummer": "LEH-012", "bezeichnung": "Butter ungesalzen", "bezeichnung2": "250 g", "artikelgruppe": "Molkerei", "einheit": "St", "warengruppe": "Molkerei & Eier", "steuercode": "UST10", "mindestmenge": 20 },
+  { "id": "art_023", "nummer": "LEH-013", "bezeichnung": "Joghurt natur 3,6%", "bezeichnung2": "500 g Becher", "artikelgruppe": "Molkerei", "einheit": "St", "warengruppe": "Molkerei & Eier", "steuercode": "UST10", "mindestmenge": 12 },
+  { "id": "art_024", "nummer": "LEH-014", "bezeichnung": "Schlagobers 32%", "bezeichnung2": "250 ml", "artikelgruppe": "Molkerei", "einheit": "St", "warengruppe": "Molkerei & Eier", "steuercode": "UST10", "mindestmenge": 12 },
+  { "id": "art_025", "nummer": "LEH-015", "bezeichnung": "Eier Freiland M", "bezeichnung2": "10er Pack", "artikelgruppe": "Eier", "einheit": "Pak", "warengruppe": "Molkerei & Eier", "steuercode": "UST10", "mindestmenge": 12 },
+  { "id": "art_026", "nummer": "LEH-016", "bezeichnung": "Gouda jung 45%", "bezeichnung2": "400 g Stück", "artikelgruppe": "Käse", "einheit": "St", "warengruppe": "Molkerei & Eier", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_027", "nummer": "LEH-017", "bezeichnung": "Emmentaler 45%", "bezeichnung2": "400 g geschnitten", "artikelgruppe": "Käse", "einheit": "St", "warengruppe": "Molkerei & Eier", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_030", "nummer": "LEH-020", "bezeichnung": "Mehl Weizenmehl glatt", "bezeichnung2": "1 kg", "artikelgruppe": "Backwaren/Mehl", "einheit": "St", "warengruppe": "Trockenware", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_031", "nummer": "LEH-021", "bezeichnung": "Zucker weiß", "bezeichnung2": "1 kg", "artikelgruppe": "Zucker/Süß", "einheit": "St", "warengruppe": "Trockenware", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_032", "nummer": "LEH-022", "bezeichnung": "Speisesalz jodiert", "bezeichnung2": "1 kg", "artikelgruppe": "Gewürze", "einheit": "St", "warengruppe": "Trockenware", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_033", "nummer": "LEH-023", "bezeichnung": "Sonnenblumenöl", "bezeichnung2": "1 l PET", "artikelgruppe": "Öle & Fette", "einheit": "St", "warengruppe": "Trockenware", "steuercode": "UST10", "mindestmenge": 6 },
+  { "id": "art_034", "nummer": "LEH-024", "bezeichnung": "Olivenöl nativ extra", "bezeichnung2": "500 ml", "artikelgruppe": "Öle & Fette", "einheit": "St", "warengruppe": "Trockenware", "steuercode": "UST10", "mindestmenge": 6 },
+  { "id": "art_035", "nummer": "LEH-025", "bezeichnung": "Nudeln Penne Rigate", "bezeichnung2": "500 g", "artikelgruppe": "Teigwaren", "einheit": "St", "warengruppe": "Trockenware", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_036", "nummer": "LEH-026", "bezeichnung": "Reis Langkorn", "bezeichnung2": "1 kg", "artikelgruppe": "Reis/Getreide", "einheit": "St", "warengruppe": "Trockenware", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_040", "nummer": "LEH-030", "bezeichnung": "Mineralwasser still", "bezeichnung2": "1,5 l PET", "artikelgruppe": "Wasser", "einheit": "St", "warengruppe": "Getränke", "steuercode": "UST20", "mindestmenge": 6 },
+  { "id": "art_041", "nummer": "LEH-031", "bezeichnung": "Orangensaft 100%", "bezeichnung2": "1 l Tetrapack", "artikelgruppe": "Säfte", "einheit": "St", "warengruppe": "Getränke", "steuercode": "UST20", "mindestmenge": 6 },
+  { "id": "art_042", "nummer": "LEH-032", "bezeichnung": "Cola 0,5 l", "bezeichnung2": "PET Einweg", "artikelgruppe": "Softdrinks", "einheit": "St", "warengruppe": "Getränke", "steuercode": "UST20", "mindestmenge": 24 },
+  { "id": "art_043", "nummer": "LEH-033", "bezeichnung": "Bier Lager 0,5 l", "bezeichnung2": "Dose", "artikelgruppe": "Bier", "einheit": "St", "warengruppe": "Getränke", "steuercode": "UST20", "mindestmenge": 24 },
+  { "id": "art_050", "nummer": "LEH-040", "bezeichnung": "TK Erbsen", "bezeichnung2": "1 kg Beutel", "artikelgruppe": "TK Gemüse", "einheit": "St", "warengruppe": "Tiefkühl", "steuercode": "UST10", "mindestmenge": 10 },
+  { "id": "art_051", "nummer": "LEH-041", "bezeichnung": "TK Pommes Frites", "bezeichnung2": "2,5 kg", "artikelgruppe": "TK Kartoffelprodukte", "einheit": "St", "warengruppe": "Tiefkühl", "steuercode": "UST10", "mindestmenge": 4 },
+  { "id": "art_052", "nummer": "LEH-042", "bezeichnung": "TK Pizza Margherita", "bezeichnung2": "410 g", "artikelgruppe": "TK Fertiggerichte", "einheit": "St", "warengruppe": "Tiefkühl", "steuercode": "UST10", "mindestmenge": 6 },
+  { "id": "art_060", "nummer": "LEH-050", "bezeichnung": "Schweineschnitzel natur", "bezeichnung2": "ca. 180 g/St, VE 2 kg", "artikelgruppe": "Schweinefleisch", "einheit": "kg", "warengruppe": "Fleisch & Wurst", "steuercode": "UST10", "mindestmenge": 2 },
+  { "id": "art_061", "nummer": "LEH-051", "bezeichnung": "Hühnerbrust frisch", "bezeichnung2": "ca. 200 g/St, VE 1 kg", "artikelgruppe": "Geflügel", "einheit": "kg", "warengruppe": "Fleisch & Wurst", "steuercode": "UST10", "mindestmenge": 1 },
+  { "id": "art_062", "nummer": "LEH-052", "bezeichnung": "Rindfleisch Tafelspitz", "bezeichnung2": "1,5 kg Stück", "artikelgruppe": "Rindfleisch", "einheit": "kg", "warengruppe": "Fleisch & Wurst", "steuercode": "UST10", "mindestmenge": 1 },
+  { "id": "art_063", "nummer": "LEH-053", "bezeichnung": "Frankfurter Würstel", "bezeichnung2": "6er Pack, 300 g", "artikelgruppe": "Wurst & Aufschnitt", "einheit": "Pak", "warengruppe": "Fleisch & Wurst", "steuercode": "UST10", "mindestmenge": 10 }
+]
