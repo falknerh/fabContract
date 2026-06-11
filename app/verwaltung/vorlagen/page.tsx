@@ -635,7 +635,8 @@ export default function VorlagenPage() {
       </div>
 
       <div className="p-6">
-        <div className="bg-white rounded-xl border border-slate-200 shadow-card overflow-hidden">
+        <div className="bg-white rounded-xl border border-slate-200 shadow-card overflow-x-auto">
+          <div className="min-w-[680px]">
           <div className="grid grid-cols-[56px_1fr_100px_130px_90px_80px_72px] gap-3 px-5 py-3 bg-slate-50 border-b border-slate-200 text-[11px] font-semibold text-slate-500 uppercase tracking-wide">
             <div>Typ</div>
             <div>Vorlage / Mandant</div>
@@ -744,6 +745,7 @@ export default function VorlagenPage() {
               <p className="text-xs text-slate-400">Gesamt {filtered.reduce((s, v) => s + v.verwendungen, 0)} Verwendungen in Kontrakten</p>
             </div>
           )}
+          </div>
         </div>
       </div>
 

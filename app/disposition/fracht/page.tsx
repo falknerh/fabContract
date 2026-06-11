@@ -283,7 +283,8 @@ export default function FrachtPage() {
         </div>
 
         {/* ── Table ── */}
-        <div className="bg-white rounded-xl border border-slate-200 shadow-card overflow-hidden">
+        <div className="bg-white rounded-xl border border-slate-200 shadow-card overflow-x-auto">
+          <div className="min-w-[860px]">
           {/* Table Header */}
           <div className="grid grid-cols-[160px_1fr_1fr_100px_90px_110px_90px_36px] gap-3 px-5 py-3 bg-slate-50 border-b border-slate-200 text-[10px] font-semibold text-slate-500 uppercase tracking-wide">
             <div>Frachtauftrag-Nr.</div>
@@ -370,6 +371,7 @@ export default function FrachtPage() {
               </div>
             ))
           )}
+          </div>
         </div>
 
         {/* ── Notizen hint ── */}

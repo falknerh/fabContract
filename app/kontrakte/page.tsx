@@ -124,7 +124,8 @@ export default function KontraktePage() {
 
       {/* ─── Table ── */}
       <div className="p-6">
-        <div className="bg-white rounded-xl border border-slate-200 shadow-card overflow-hidden">
+        <div className="bg-white rounded-xl border border-slate-200 shadow-card overflow-x-auto">
+          <div className="min-w-[780px]">
           {/* Header */}
           <div className="grid grid-cols-[60px_1fr_160px_120px_120px_100px_80px] gap-3 px-5 py-3 bg-slate-50 border-b border-slate-200 text-xs font-semibold text-slate-500 uppercase tracking-wide">
             <div>Art</div>
@@ -253,6 +254,7 @@ export default function KontraktePage() {
               <div />
             </div>
           )}
+          </div>
         </div>
       </div>
     </div>

@@ -625,7 +625,7 @@ export default function KontraktDispositionPage() {
 
           {/* ─── Abrufe Tab ── */}
           {activeTab === "abrufe" && (
-            <div className="bg-white rounded-b-xl border border-t-0 border-slate-200 shadow-card overflow-hidden">
+            <div className="bg-white rounded-b-xl border border-t-0 border-slate-200 shadow-card overflow-x-auto">
 
               {/* Filter bar */}
               <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-100 bg-slate-50">
@@ -652,6 +652,7 @@ export default function KontraktDispositionPage() {
                 ))}
               </div>
 
+              <div className="min-w-[780px]">
               {/* Table header */}
               <div className="grid grid-cols-[1fr_140px_100px_100px_120px_80px_32px] gap-3 px-5 py-2.5 bg-slate-50 border-b border-slate-100 text-[10px] font-semibold text-slate-500 uppercase tracking-wide">
                 <div>Abruf / Artikel</div>
@@ -857,13 +858,14 @@ export default function KontraktDispositionPage() {
                   Gesamt: {formatNumber(filteredAbrufe.reduce((s, a) => s + a.menge, 0), 0)} t
                 </span>
               </div>
+              </div>
             </div>
           )}
 
           {/* ─── Warenbewegungen Tab ── */}
           {activeTab === "bewegungen" && (
-            <div className="bg-white rounded-b-xl border border-t-0 border-slate-200 shadow-card overflow-hidden">
-
+            <div className="bg-white rounded-b-xl border border-t-0 border-slate-200 shadow-card overflow-x-auto">
+              <div className="min-w-[760px]">
               {/* Table header */}
               <div className="grid grid-cols-[100px_90px_1fr_100px_1fr_80px_120px] gap-3 px-5 py-2.5 bg-slate-50 border-b border-slate-200 text-[10px] font-semibold text-slate-500 uppercase tracking-wide">
                 <div>Datum</div>
@@ -950,13 +952,14 @@ export default function KontraktDispositionPage() {
                   )} t
                 </span>
               </div>
+              </div>
             </div>
           )}
 
           {/* ─── Positionen Tab ── */}
           {activeTab === "positionen" && (
-            <div className="bg-white rounded-b-xl border border-t-0 border-slate-200 shadow-card overflow-hidden">
-
+            <div className="bg-white rounded-b-xl border border-t-0 border-slate-200 shadow-card overflow-x-auto">
+              <div className="min-w-[740px]">
               {/* Table header */}
               <div className="grid grid-cols-[50px_1fr_100px_100px_100px_100px_90px] gap-3 px-5 py-2.5 bg-slate-50 border-b border-slate-200 text-[10px] font-semibold text-slate-500 uppercase tracking-wide">
                 <div className="text-center">Pos</div>
@@ -1074,6 +1077,7 @@ export default function KontraktDispositionPage() {
                   {formatNumber(MOCK_POSITIONEN.reduce((s, p) => s + (p.mengeSoll - p.mengeDisponiert), 0), 0)} t
                 </div>
                 <div />
+              </div>
               </div>
             </div>
           )}

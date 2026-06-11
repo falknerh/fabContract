@@ -75,7 +75,8 @@ export default function DispositionPage() {
         </div>
 
         {/* List */}
-        <div className="bg-white rounded-xl border border-slate-200 shadow-card overflow-hidden">
+        <div className="bg-white rounded-xl border border-slate-200 shadow-card overflow-x-auto">
+          <div className="min-w-[580px]">
           <div className="grid grid-cols-[120px_1fr_100px_80px_100px_80px] gap-3 px-5 py-3 bg-slate-50 border-b border-slate-200 text-[10px] font-semibold text-slate-500 uppercase tracking-wide">
             <div>Nummer</div>
             <div>Kontrakt / Artikel</div>
@@ -113,6 +114,7 @@ export default function DispositionPage() {
               </div>
             );
           })}
+          </div>
         </div>
       </div>
     </div>

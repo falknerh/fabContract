@@ -473,7 +473,11 @@ export default function KontraktDetailPage() {
   }
 
   const artikelPositionen = positionen.filter(p => p.typ === "ARTIKEL");
-  const gesamtMenge = artikelPositionen.reduce((s, p) => s + (p.menge ?? 0), 0);
+  // Only sum positions in tonnes — mixed-unit contracts (kg, St, Pak …) must not be summed as "t"
+  const gesamtMenge = artikelPositionen
+    .filter(p => p.einheit === "t")
+    .reduce((s, p) => s + (p.menge ?? 0), 0);
+  const isBulkContract = kontrakt.belegvariante !== "EINZEL" || gesamtMenge > 0;
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -854,10 +858,17 @@ export default function KontraktDetailPage() {
                 <span className="text-slate-500">Positionen</span>
                 <span className="font-medium">{artikelPositionen.length}</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-slate-500">Gesamtmenge</span>
-                <span className="font-medium">{formatNumber(gesamtMenge, 0)} t</span>
-              </div>
+              {isBulkContract ? (
+                <div className="flex justify-between">
+                  <span className="text-slate-500">Gesamtmenge</span>
+                  <span className="font-medium">{formatNumber(gesamtMenge, 0)} t</span>
+                </div>
+              ) : (
+                <div className="flex justify-between">
+                  <span className="text-slate-500">Einheiten</span>
+                  <span className="font-medium text-xs text-slate-400">gemischte Einheiten</span>
+                </div>
+              )}
               <div className="border-t border-slate-100 pt-2 mt-2">
                 <div className="flex justify-between">
                   <span className="text-slate-500">Summe netto</span>
@@ -878,19 +889,25 @@ export default function KontraktDetailPage() {
           {/* Disposition Quick Summary */}
           <Card>
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Disposition</p>
-            <div className="space-y-2.5">
-              {[
-                { label: "Gesamt",        value: kontrakt.gesamtMenge ?? 0,       color: "text-slate-700" },
-                { label: "Disponiert",    value: kontrakt.disponiertesMenge ?? 0, color: "text-blue-600" },
-                { label: "Geliefert",     value: kontrakt.gelieferteMenge ?? 0,   color: "text-emerald-600" },
-                { label: "Offen",         value: (kontrakt.gesamtMenge ?? 0) - (kontrakt.disponiertesMenge ?? 0), color: "text-amber-600" },
-              ].map(item => (
-                <div key={item.label} className="flex justify-between text-sm">
-                  <span className="text-slate-500">{item.label}</span>
-                  <span className={`font-semibold ${item.color}`}>{formatNumber(item.value, 0)} t</span>
-                </div>
-              ))}
-            </div>
+            {isBulkContract ? (
+              <div className="space-y-2.5">
+                {[
+                  { label: "Gesamt",     value: kontrakt.gesamtMenge ?? 0,       color: "text-slate-700" },
+                  { label: "Disponiert", value: kontrakt.disponiertesMenge ?? 0, color: "text-blue-600" },
+                  { label: "Geliefert",  value: kontrakt.gelieferteMenge ?? 0,   color: "text-emerald-600" },
+                  { label: "Offen",      value: (kontrakt.gesamtMenge ?? 0) - (kontrakt.disponiertesMenge ?? 0), color: "text-amber-600" },
+                ].map(item => (
+                  <div key={item.label} className="flex justify-between text-sm">
+                    <span className="text-slate-500">{item.label}</span>
+                    <span className={`font-semibold ${item.color}`}>{formatNumber(item.value, 0)} t</span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-xs text-slate-400 pb-1">
+                Einzelbeleg mit gemischten Einheiten – Mengendisposition nicht verfügbar.
+              </p>
+            )}
             <Link href={`/kontrakte/${id}/disposition`}>
               <Button variant="outline" size="sm" className="w-full mt-3" icon={<Truck className="w-3.5 h-3.5" />}>
                 Disposition verwalten

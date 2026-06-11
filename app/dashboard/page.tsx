@@ -144,7 +144,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Tabs */}
-        <div className="flex items-center gap-0 mt-4 border-b border-slate-200 -mb-4">
+        <div className="flex items-center gap-0 mt-4 border-b border-slate-200 -mb-4 overflow-x-auto">
           {TABS.map(tab => (
             <button
               key={tab}

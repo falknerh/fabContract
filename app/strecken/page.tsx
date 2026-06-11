@@ -110,7 +110,7 @@ export default function StreckenPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-4 gap-3 mt-4">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
                   {[
                     { label: "Erlös",          value: s.erloes,        color: "text-emerald-600" },
                     { label: "Wareneinsatz",   value: s.wareneinsatz,  color: "text-red-500" },

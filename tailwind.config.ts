@@ -38,8 +38,8 @@ const config: Config = {
         ]
       },
       boxShadow: {
-        card: "0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.05)",
-        "card-hover": "0 4px 12px 0 rgb(0 0 0 / 0.12), 0 2px 4px -1px rgb(0 0 0 / 0.07)",
+        card: "0 1px 4px 0 rgb(0 0 0 / 0.04)",
+        "card-hover": "0 4px 12px 0 rgb(0 0 0 / 0.08), 0 1px 3px -1px rgb(0 0 0 / 0.04)",
         modal: "0 20px 60px -10px rgb(0 0 0 / 0.3)",
       },
       animation: {
